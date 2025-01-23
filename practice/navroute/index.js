@@ -1,8 +1,15 @@
 const express = require("express")
 const app = express();
+const bodyparser = require("body-parser")
+const mongoose = require("mongoose");
 const collegeRoute = require("./route/collegeRoute")
 
+app.use(bodyparser.urlencoded({extended:true}))
+app.use(bodyparser.json())
 app.set("view engine" , "ejs")
+
+mongoose.connect("mongodb://127.0.0.1:27017/data")
+
 app.use("/college", collegeRoute)
 
 app.listen(8000, ()=>{
