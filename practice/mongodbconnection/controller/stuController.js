@@ -16,19 +16,25 @@ const contactPage = (req,res)=>{
 }
 
 const stuData = async(req,res)=>{
-    const{name, city, number, age} = req.body;
+    const{rollno, name, city, fees} = req.body;
     const data =await stuModel.create({
+        rollno:rollno,
         name:name,
         city:city,
-        number:number,
-        age:age
+        fees:fees
     })
     res.render("contact")
 }
+
+const stuDisplay = async (req,res) =>{
+    const getdata = await stuModel.find();
+    res.render("About" , {myData:getdata});
+}
 module.exports={
     homePage,
-    aboutPage,
+    aboutPage, 
     feesPage,
     contactPage,
-    stuData
+    stuData,
+    stuDisplay
 }

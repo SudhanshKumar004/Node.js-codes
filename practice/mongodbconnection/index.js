@@ -15,6 +15,6 @@ mongoose.connect("mongodb://127.0.0.1:27017/studentData")
 
 
 
-app.listen(8080, ()=>{
-    console.log("Server running on 8080 port");
+app.listen(8000, ()=>{
+    console.log("Server running on 8000 port");
 })

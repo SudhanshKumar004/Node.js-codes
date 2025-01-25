@@ -1,10 +1,10 @@
 const mongoose = require("mongoose")
 
 const contactSchema = new mongoose.Schema({
+    rollno:Number,
     name:String,
     city:String,
-    number:Number,
-    age:String
+    fees:Number
 })
 
 module.exports = mongoose.model("Contact" , contactSchema)

@@ -8,13 +8,33 @@
 <body bgcolor="cadetblue">
 
     <a href="/students/home">Home</a>
-    <a href="/students/about">About</a>
+    <a href="/students/display">Display</a>
     <a href="/students/fees">Fees</a>
     <a href="/students/contact">Contact Us</a>
 
     <hr size="4" color="red">
 
-    <h1>About Us</h1>
+    <table bgcolor="yellow" align="center">
+
+        <tr>
+            <th>Roll No.</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Fees</th>
+        </tr>
+
+        <% myData.forEach((key)=>{
+                %>
+                <tr>
+                    <td><%= key.rollno %></td>
+                    <td><%= key.name %></td>
+                    <td><%= key.city %></td>
+                    <td><%= key.fees %></td>
+                </tr>
+            <%    
+            })  %>
+            
+    </table>
     
     <hr size="4" color="red">
 </body>
